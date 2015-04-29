@@ -14,7 +14,8 @@ Change the mode from TEST to LIVE and click on Save configuration.
 
 **Your Payment Gateway will be up and running.**
 
-**Please find the test Merchant key and Salt for testing purpose below –**
+Test Merchant key and Salt 
+-------
 
 **Test Key:** – JBZaLc
 
