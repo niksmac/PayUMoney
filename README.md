@@ -15,14 +15,21 @@ Change the mode from TEST to LIVE and click on Save configuration.
 **Your Payment Gateway will be up and running.**
 
 **Please find the test Merchant key and Salt for testing purpose below –**
+
 **Test Key:** – JBZaLc
+
 **Test Salt:** – GQs7yium
 
 **Please find below the test credit card details which you might require to run test transactions in test mode –**
+
 **Test Credit Card Name:** any name
+
 **Test Credit Card Number:** 5123456789012346 
+
 **Test CVV:** 123
+
 **Test Expiry:** May 2017
+
 
 
 Useful links
