@@ -223,7 +223,8 @@ function uc_securepayu_form($form, $form_state, $order) {
   $curl = url('cart/securepayu/complete/',array('absolute' => TRUE)). $order->order_id.'/DR={DR}';  
   
   
-  $key='JBZaLc';$salt='GQs7yium';//$txnid='12312429874654';
+  // $key='JBZaLc';$salt='GQs7yium';//$txnid='12312429874654';
+  
   $pg = isset($_SESSION['pay_method']) ? $_SESSION['pay_method'] : 'CC';
   $string = $key . '|' . $txnid . '|' . $amount . '|' . $productinfo . '|' . $firstname . '|' . $email . '|||||||||||' . $salt;
   $hash = strtolower(hash('sha512', $string));
