@@ -28,15 +28,6 @@ function uc_securepayu_init() {
 }
 
 /**
- * Make sure anyone can complete their securepayu orders.
- */
-/*
-Unnecessary Function 
-function uc_securepayu_completion_access() {
-  return TRUE;
-}*/
-
-/**
  * Implementation of hook_ucga_display().
  */
 function uc_securepayu_ucga_display() {
