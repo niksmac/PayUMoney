@@ -56,30 +56,6 @@ function uc_securepayu_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
- * Implementation of hook_payment_method().
- *
- * @see uc_payment_method_securepayu()
- */
-function uc_securepayu_uc_payment_method() {
-  $path = base_path() . drupal_get_path('module', 'uc_securepayu');
-  $title = variable_get('uc_uc_securepayu_method_title', t('Online Payment through PayUMoney:'));
-  $title .= '<br /><br /><img src="' . $path . '/logo.gif" style="position: relative; left: 2.5em;" />';
-
-  $methods[] = array(
-      'id' => 'securepayu',
-      'name' => t('PayUMoney'),
-      'title' => $title,
-      'desc' => t('Redirect to PayUMoney to pay by credit card or netbanking.'),
-      'callback' => 'uc_payment_uc_method_securepayu',
-      'weight' => 3,
-      'checkout' => TRUE,
-      'no_gateway' => TRUE,
-  );
-
-  return $methods;
-}
-
-/**
  * Add securepayu settings to the payment method settings form.
  *
  * @see uc_securepayu_uc_payment_method()
@@ -167,6 +143,33 @@ function uc_payment_uc_method_securepayu($op, &$arg1, $form = NULL, &$form_state
       return $form;
   }
 }
+
+
+
+/**
+ * Implementation of hook_payment_method().
+ *
+ * @see uc_payment_method_securepayu()
+ */
+function uc_securepayu_uc_payment_method() {
+  $path = base_path() . drupal_get_path('module', 'uc_securepayu');
+  $title = variable_get('uc_uc_securepayu_method_title', t('Online Payment through PayUMoney:'));
+  $title .= '<br /><br /><img src="' . $path . '/logo.gif" style="position: relative; left: 2.5em;" />';
+
+  $methods[] = array(
+      'id' => 'securepayu',
+      'name' => t('PayUMoney'),
+      'title' => $title,
+      'desc' => t('Redirect to PayUMoney to pay by credit card or netbanking.'),
+      'callback' => 'uc_payment_uc_method_securepayu',
+      'weight' => 3,
+      'checkout' => TRUE,
+      'no_gateway' => TRUE,
+  );
+
+  return $methods;
+}
+
 
 function uc_securepayu_form($form, $form_state, $order) {
   $country = uc_get_country_data(array('country_id' => $order->billing_country));
